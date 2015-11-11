@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@drawable/view_frame"
+        android:padding="3dip" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/informationDispTitleTextView1"
+            android:textSize="20sp"
+            android:lines="1"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    
+    <HorizontalScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="7dip"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarTrackHorizontal="@drawable/scrollbar_track"
+        android:scrollbarThumbHorizontal="@drawable/scrollbar_thumb" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:fillViewport="true"
+    		android:id="@+id/informationDispLinearLayout1" >
+        </LinearLayout>
+        
+    </HorizontalScrollView>
+	
+    <ScrollView
+        android:id="@+id/informationDispScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:padding="3dip"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="7dip"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarTrackVertical="@drawable/scrollbar_track_vertical"
+        android:scrollbarThumbVertical="@drawable/scrollbar_thumb_vertical"
+        android:background="@drawable/view_frame" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="3dip" >
+
+            <TextView
+                android:id="@+id/informationViewTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

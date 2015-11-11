@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mapRelativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ScrollView
+        android:id="@+id/map_scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <HorizontalScrollView
+            android:id="@+id/map_HorizontalScrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+              <!--   <ImageView
+                    android:id="@+id/map_imageView"
+                    android:layout_width="480dp"
+                    android:layout_height="470dp"
+                    android:background="@drawable/i2" />
+                     -->
+
+                <ImageView
+                    android:id="@+id/map_imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/i2" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+</RelativeLayout>
