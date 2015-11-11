@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <title>CaviNet ヘルプ</title>
+    <link rel ="stylesheet" href="css/button.css">
+    <link rel ="stylesheet" href="css/button1.css">
+    <link rel ="stylesheet" href="css/button2.css">
+    <link rel ="stylesheet" href="css/button3.css">
+    <link rel ="stylesheet" href="css/button4.css">
+    <link rel ="stylesheet" href="css/mycss.css">
+    <script type="text/javascript" src="js/formatter.js"></script>
+
+    <script type="text/javascript">
+/*
+      DL_Link = "http://54.68.143.213/cgi-bin/dl.cgi?file="+"ファイル名";
+      var target = document.getElementById("DLManual");
+      var DLButton = document.createElement("input");
+      DLButton.type = "button";
+      DLButton.value = "マニュアルのダウンロード";
+      DLButton.href = DL_Link;
+      target.appendChild(DLButton);
+*/
+    </script>
+  </head>
+
+  <body link="blue" vlink="blue">
+    <div id="container">
+      <!-- ヘッダ -->
+      <div class = "header" id="select-top"><!-- ヘッダー開始 -->
+	<table>
+	  <tr>	
+	    <a href="TopPage.html" >
+	      <div id = "headTitle">
+		<div class="threed">CaviNet</div>
+	      </div>
+	    </a>
+
+	    <div id = "locate"><h1><u>▶︎CaviNetの使い方</u></h1></div>
+	  </tr>
+	  <div id = "pic"><img src = "pic/cavinet_logo.png" width="150px"></div>
+	</table>
+      </div><!-- ヘッダー終了 -->
+
+      
+
+      <div id="contents2"><!-- コンテンツ開始 -->
+	<!-- ヘルプのコンテンツを追加 -->
+	<p>
+	コンテンツ管理画面CaviNetの操作でお困りのことがあれば、このページを参照してください。<br>
+	また、このページを参照しても問題が解消されない場合はお問い合わせください。<br>
+	※以下で表示している画像は操作時の画面と多少異なる場合があります。<br>
+	<p>
+
+
+
+	<!-- ページのスクロールリンクの挿入部分  -->
+	<hr>
+	<div>
+	  <ul><h1>画面説明</h1>
+	    <li><a href="#voice">音声ガイドの画面説明</a></li>
+	    <li><a href="#info">インフォメーションの画面説明</a></li>
+	    <li><a href="#language">言語登録の画面説明</a></li>
+	  </ul>
+
+	  <ul><h1>基本操作</h1> 
+		<li><a href="#operate1">登録されている音声の確認方法</a></li>
+		<li><a href="#operate2">登録されているテキスト・写真を確認する方法</a></li>
+		<li><a href="#operate3">音声ガイドの案内場所の順番を変更したい場合</a></li>
+		<li><a href="#operate4">インフォメーションの案内場所の順番を変更したい場合</a></li>
+		<li><a href="#operate5">音声ガイドの案内場所を追加したい場合</a></li>
+		<li><a href="#operate6">音声ガイドの案内場所を削除したい場合</a></li>
+		<li><a href="#operate7">インフォメーションの案内場所を追加したい場合</a></li>
+		<li><a href="#operate8">インフォメーションの案内場所を削除したい場合</a></li>
+		<li><a href="#operate9">音声データを変更したい場合</a></li>
+		<li><a href="#operate10">音声データを削除したい場合</a></li>
+		<li><a href="#operate11">テキスト・写真を変更したい場合</a></li>
+		<li><a href="#operate12">テキスト・写真を削除したい場合</a></li>					
+	  </ul>
+	  
+	  <ul><h1>動作がおかしいと思ったら</h1>
+	    <li><a href="#problem1">表が表示されない</a></li>
+	    <li><a href="#problem2">音声・テキスト・写真の変更が反映されていない場合</a></li>
+	    <li><a href="#problem3">編集・追加・削除ボタンを押しても反応しない場合</a></li>
+	  </ul>
+
+	  <ul><h1>リンク</h1>
+	    <li><a href="#manual">マニュアルをダウンロードする</a></li>
+	  </ul>
+
+	</div>
+	
+	<p>
+	  <hr>
+	<p>
+
+	<!--------------------------- 画面説明  --------------------------------------->
+	<h1><b><u>画面説明</u></b></h1>
+	<h2 id="voice">音声ガイドの画面説明</h2>
+	<img src="pic/help/voiceHelp.png"alt="voiceHelp" width="75%" height="75%" border="1"><br><br>
+	①各ページに移動することができます。<br>
+	②登録されているデータが表示されます。<br>
+	③表示する言語を変更することができます。<br>
+	④表のチェックを外すことができます。<br>
+	⑤登録されているデータを変更することができます。<br>
+	⑥選択している言語にデータを追加することができます。<br>
+	⑦登録されているデータを削除することができます。<br>
+	⑧案内場所の順番を変更することができます。<br>
+	⑨登録されている音声データをダウンロードすることができます。<br>
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+
+	<h2 id="info">インフォメーションページの画面説明</h2>
+	<img src="pic/help/infoHelp.png"alt="infoHelp" width="75%" height="75%" border="1"><br><br>
+	①各ページに移動することができます。<br>
+	②登録されているデータが表示されます。<br>
+	③表示する言語を変更することができます。<br>
+	④表のチェックを外すことができます。<br>
+	⑤登録されているデータを変更することができます。<br>
+	⑥選択している言語にデータを追加することができます。<br>
+	⑦登録されているデータを削除することができます。<br>
+	⑧案内場所の順番を変更することができます。<br>
+	⑨登録されているテキストデータを確認、ダウンロードすることができます。<br>
+	⑩登録されている写真データを確認、ダウンロードすることができます。<br>
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	
+	<h2 id="language">言語登録の画面説明</h2>
+	<img src="pic/help/langHelp.png"alt="langHelp" width="75%" height="75%" border="1"><br><br>
+	①各ページに移動することができます。<br>
+	②登録されている言語が表示されます。<br>
+	③表のチェックを外すことができます。<br>
+	④言語の名前を変更することができます。<br>
+	⑤新しい言語を追加することができます。<br>
+	⑥登録されている言語を削除することができます。<br>
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+	
+	<hr>
+	<!--------------------------- 基本操作 ---------------------------------->
+	<h1><b><u>基本操作</u></b></h1>
+	<h2 id="operate1">登録されている音声の確認方法</h2>
+	<img src="pic/help/checkvoice1.png" width="75%" border="1"><br>
+	①音声データが登録されている場合、「音声を確認」ボタンをクリックすると確認することができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+	
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate2">登録されているテキスト・写真の確認方法</h2>
+	<img src="pic/help/checkpictext1.png" width="75%" border="1"><br>
+	①テキストデータが登録されている場合、「テキストを確認」ボタンをクリックすると確認することができます。<br>
+	②写真データが登録されている場合、「写真を確認」ボタンをクリックすると確認することができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+	
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate3">音声ガイドの案内場所の順番を変更したい場合</h2>
+	<img src="pic/help/swapvoice1.png" width="75%" border="1"><br>
+	①入れ替えたい項目を選択してください。<br>
+	②「繰り上げ」ボタンをクリックすると、上の項目と入れ替えることができます。同様に、「繰り下げ」ボタンをクリックすると、下の項目と入れ替えることができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate4">インフォーメーションの案内場所の順番を変更したい場合</h2>
+	<img src="pic/help/swappictext1.png" width="75%" border="1"><br>
+	①入れ替えたい項目を選択してください。<br>
+	②「繰り上げ」ボタンをクリックすると、上の項目と入れ替えることができます。同様に、「繰り下げ」ボタンをクリックすると、下の項目と入れ替えることができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">	
+	<h2 id="operate5">音声ガイドの案内場所を追加したい場合</h2>
+	<img src="pic/help/addvoice1.png" width="75%" border="1"><br>
+	①音声ガイド画面において、「案内場所を追加」ボタンをクリックすると、別ウィンドウ②が表示されます。<br>
+	②このウィンドウが表示されていると、元の画面の操作を行うことはできません。追加を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	③案内場所の名前を記述してください。日本語で入力してください。<br>
+	④音声ガイドに登録する音声データを選択してください。<br>
+	⑤「上記の内容で追加」ボタンをクリックすると、音声ガイドにおいて案内場所を登録することができます。キャンセルボタンをクリックすることで閉じることができます。音声データはあとから変更することが可能です。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate6">音声ガイドの案内場所を削除したい場合</h2>
+	<img src="pic/help/deletevoice1.png" width="40%" align="top" border="1">
+	<img src="pic/help/deletevoice3.png" width="35%" align="top" border="1"><br>
+	①削除したい項目を選択してください。<br>
+	②インフォメーション画面において、「案内場所・内容の削除」ボタンをクリックすると、別ウィンドウ③が表示されます。<br>
+	③このウィンドウが表示されていると、元の画面の操作を行うことはできません。削除を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	④「消去する」ボタンをクリックすると、選択された案内場所の項目を削除することができます。項目に登録されていたテキスト・写真データも削除されるため注意してください。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+	
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate7">インフォメーションの案内場所を追加したい場合</h2>
+	<img src="pic/help/addinfo1.png" width="75%" border="1"><br>
+	①インフォメーション画面において、「案内場所を追加」ボタンをクリックすると、別ウィンドウ②が表示されます。<br>
+	②このウィンドウが表示されていると、元の画面の操作を行うことはできません。追加を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	③案内場所の名前を記述してください。案内場所の名前は日本語で入力し、ネイティブの綴りは選択している言語の綴りで入力してください。<br>
+	④インフォメーションに登録するテキストデータを選択してください。<br>
+	⑤インフォメーションに登録する写真データを選択してください。最大登録枚数は３枚です。<br>
+	⑥「上記の内容で追加」ボタンをクリックすると、インフォメーションにおいて案内場所を登録することができます。キャンセルボタンをクリックすることで閉じることができます。<br>　音声データはあとから変更することが可能です。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate8">インフォメーションの案内場所を削除したい場合</h2>
+	<img src="pic/help/deletepictext1.png" width="75%" align="top" border="1">
+	<img src="pic/help/deletepictext3.png" width="75%" align="top" border="1"><br>
+	①削除したい項目を選択してください。<br>
+	②インフォメーション画面において、「案内場所・内容の削除」ボタンをクリックすると、別ウィンドウ③が表示されます。<br>
+	③このウィンドウが表示されていると、元の画面の操作を行うことはできません。削除を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	④「消去する」ボタンをクリックすると、選択された案内場所の項目を削除することができます。項目に登録されていたテキスト・写真データも削除されるため注意してください。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate9">音声データを変更したい場合</h2>
+	<img src="pic/help/hensyuvoice1.png" width="40%" align="top" border="1">
+	<img src="pic/help/hensyuvoice2.png" width="35%" align="top" border="1"><br>
+	①入れ替えたい項目を選択してください。<br>
+	②音声ガイド画面において、「内容の編集」ボタンをクリックすると、別ウィンドウ③が表示されます。<br>
+	③このウィンドウが表示されていると、元の画面の操作を行うことはできません。編集を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	④「ファイルを選択」ファイルを選択ボタンをクリックし、変更したい音声データを選んでください。<br>
+	⑤「上記の内容でページを変更」ボタンをクリックすると、選択された案内場所に音声データを登録することができます。キャンセルボタンをクリックすることで閉じることができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate10">音声データを削除したい場合</h2>
+	<img src="pic/help/deletevoice1.png" width="40%" align="top" border="1">
+	<img src="pic/help/deletevoice2.png" width="35%" align="top" border="1"><br>
+	①削除したい項目を選択してください。<br>
+	②音声ガイド画面において、「案内場所・内容の削除」ボタンをクリックすると、別ウィンドウ③が表示されます。<br>
+	③このウィンドウが表示されていると、元の画面の操作を行うことはできません。削除を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	④「消去する」ボタンをクリックすると、選択された案内場所の音声データを削除することができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate11">テキスト・写真データを変更したい場合</h2>
+	<img src="pic/help/hensyuinfo.png" width="75%" align="top" border="1"><br>
+	<img src="pic/help/hensyuinfo2.png" width="75%" align="top" border="1"><br>
+	①入れ替えたい項目を選択してください。<br>
+	②インフォメーション画面において、「内容の編集」ボタンをクリックすると、別ウィンドウ③が表示されます。<br>
+	③このウィンドウが表示されていると、元の画面の操作を行うことはできません。編集を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	④「ファイルを選択」ファイルを選択ボタンをクリックし、変更したいテキストデータを選んでください。写真のみ編集の場合は選択する必要はありません。
+	⑤「ファイルを選択」ファイルを選択ボタンをクリックし、変更したい写真データを選んでください。テキストのみ編集の場合は選択する必要はありません。
+	⑥「上記の内容でページを変更」ボタンをクリックすると、選択された案内場所にテキスト・写真データを登録することができます。キャンセルボタンをクリックすることで閉じることができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+	<h2 id="operate12">テキスト・写真データを削除したい場合</h2>
+	<img src="pic/help/deletepictext1.png" width="75%" align="top" border="1">
+	<img src="pic/help/deletepictext2.png" width="75%" align="top" border="1"><br>
+	①削除したい項目を選択してください。<br>
+	②インフォメーション画面において、「案内場所・内容の削除」ボタンをクリックすると、別ウィンドウ③が表示されます。<br>
+	③このウィンドウが表示されていると、元の画面の操作を行うことはできません。削除を完了するか、キャンセルボタンをクリックすることで閉じることができます。<br>
+	④「消去する」ボタンをクリックすると、選択された案内場所の写真データを削除することができます。<br>
+	⑤「消去する」ボタンをクリックすると、選択された案内場所のテキストデータを削除することができます。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+
+	<hr>
+	<!---------------------- 動作がおかしいと思ったら -------------------------->
+	<h1><b><u>動作がおかしいと思ったら</u></b></h1>
+	<h2 id="problem1">表が表示されない</h2>
+	<img src="pic/help/problem1-1.png" alt="voiceHelp" width="75%" height="75%" border="1"><br><br>
+	上記のようにCaviNetを使用していて、一覧で表示されていた表が表示されない場合、インターネット接続が正しく行われているか確認してください。<br>
+	インターネット接続を正しく行われていると確認できれた場合は「更新（またはF5キー）」を押して、再度CaviNetを開き直してください。<br>
+	また、CaviNetマニュアルより推奨されるブラウザが適切であるかどうか確認してください。<br>
+	推奨ブラウザは「InterNet Explorer」または「FireFox」となっています。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+
+	<h2 id="problem2">音声・テキスト・写真の変更が反映されていない場合</h2>
+	<!--   <img src="pic/help/ " alt="voiceHelp" width="75%" height="75%" border="1"><br>  -->
+	上記の問題には以下の対処法をとっていただければ正常に戻ることが確認できています。<br>
+	<p>
+	＜対処法＞<br>
+	以下はブラウザを「InterNet Explorer」で行ったときの画面操作の説明となります。<br>
+	<img src="pic/help/problem2-1.png " alt="voiceHelp" width="75%" height="75%" border="1"><br><br>
+	以上の画面より、①→②→③の順番にクリックしていき「閲覧の履歴の削除」を開きます。<br><br>
+
+	<img src="pic/help/problem2-2.png " alt="voiceHelp" width="35%" height="35%" border="1"><br><br> 
+	次に、以上の画面が開くので、同じく①→②でそれぞれ「クッキーとWebサイトデータ(O)」と「履歴(H)」にチェックを付け、<br>
+	③で削除を行います。これができれば、「更新（またはF5キー）」を押して、再度CaviNetを開き直してください。<br>
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+	
+	<hr style="border-top: 2px dotted #111111;width: 100%;">
+
+	<h2 id="problem3">編集・追加・削除ボタンを押しても反応しない場合</h2>
+	<img src="pic/help/problem3-1.png" alt="voiceHelp" width="35%" height="35%" border="1"><br>
+	上記にある3種類（「内容の編集」「案内場所の追加」「案内場所・内容の削除」）のボタンを押しても反応しない場合は、<br>
+	CaviNetマニュアルより推奨されているブラウザが適切であるかどうかを確認してください。<br>
+	推奨ブラウザは「InterNet Explorer」または「FireFox」となっています。
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+
+	<hr>
+	<!------------------------------ リンク ----------------------------------->
+	<h1><b><u>リンク</u></b></h1>
+	<h2 id="manual">マニュアルをダウンロードする</h2>
+	以下のダウンロードボタンより、紙マニュアルをダウンロードすることができます。<br>
+	<input type="button" value="マニュアルのダウンロード" href="http://54.68.143.213/cgi-bin/dl.cgi?file=ファイル名";>
+
+	<div id="back-top"><a href="#select-top">トップへ戻る</a></div>
+
+
+
+	<hr>
+      </div><!-- コンテンツ終了 -->
+    </div>
+  </body>
+</html>

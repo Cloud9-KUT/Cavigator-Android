@@ -1,0 +1,79 @@
+/* main.css*/
+
+html{
+    height: 100%;
+    background-image : url("pic/background.png");
+}
+
+body{
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+#header{
+    height: 160px;
+}
+#headTitle{
+    float:left;
+    margin:5px
+}
+#locate{
+    float:left;
+}
+#logoutBottom{
+    position:relative;
+    top:10px;left:0px;
+    float:right;
+}
+#logoutBottom div{
+    position:absolute;
+    top:18px;left:24px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#logoCloud9{
+    margin: 5px;
+}
+#topContainer{
+    min-height: 100%;
+    height:100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 90%;
+}
+#container{
+    min-height: 100%;
+    height:100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+#topContents{
+    min-height: 100%;
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+}
+#contents{
+    margin-left: 200px;
+}
+
+#list{
+    text-align:center;
+
+}
+
+#side{
+    margin-top:10px;
+    width:160px;
+    float:left;
+}
+#side div{
+    position:relative;
+    top:10px;left:0px;
+}
+#side div div{
+    position:absolute;
+    top:24px;left:20px;
+    font-size: 18px;
+}

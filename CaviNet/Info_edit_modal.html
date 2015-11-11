@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+	<meta charset = "utf-8">
+	<script src="js/formatter.js"></script>
+	<script src="js/edit.js"></script>
+	<script src="js/modal.js"></script>
+	<title>CaviNet</title>
+	
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+  </head>
+  
+  <body onload="textpic_setParams3();">
+	<h2>インフォメーションの<u>案内場所</u>を<font color="#FF0000">変更する</font></h2>
+	<hr>
+	<table border=1><tr><td><p>
+		<h3><u>変更する情報を入力</u></h3>
+		 <form method="post" id="location" target="nodisp">
+		  案内場所の名前<br>
+		  <div><input type="text" id="page" name="name" size="30"></div>
+		</form> 
+		<form method="post" id="location2" target="nodisp">
+		  ネイティブの綴り<br>
+		  <div><input type="text" id="page2" name="name" size="30"></div>
+		</form>
+	</p></td></tr>
+	
+	  <!--form2 fileData-->
+	<tr><td><p>
+		<h3><u>変更するテキストデータの選択</u></h3>
+		<font color="#ff0000">※テキストデータは1つのみ登録可能です。<br>
+		テキストデータを選択して変更ボタンを押した場合、既に登録してあるテキストデータは上書きされます。
+		</font>
+		<table><tr><td>
+		  <form enctype="multipart/form-data" method="post" id="textfile" target="nodisp">
+			テキストデータの追加・上書き<br>
+			<input type="file" name="data" id="text1" accept="text/plain"><br>
+		  </form><br>
+		</td><td id="showTextArea1"></td><tr>
+		</table>
+	</td></tr>
+	
+	<tr><td><p>
+		<h3><u>変更する画像データの選択</u></h3>
+		<form enctype="multipart/form-data" method="post" id="picfile1" target="nodisp"> 
+		  <font color="#ff0000">※画像データは3つのみ登録可能です。<br>
+		  画像データを選択して送信した場合、既に登録してある画像データは上書きされます。
+		  </font><br>
+		  
+		  <table><tr><td id="picture0"></td><td>
+		  １枚目の画像データを追加・上書き<br>
+		  <input type="file" name="data" accept="image/jpeg,image/jpg,image/png" value ="画像ファイルを選択" id="pic1"><br>
+		  <input type="button" value="やっぱやめる" onclick="clearfile1()">
+			</form>
+		  </td><td id="showPictureArea1"></td></tr>
+		
+		  <tr><td id="picture1"></td><td>
+			<form enctype="multipart/form-data" method="post" id="picfile2" target="nodisp"> <br>
+			２枚目の画像データを追加・上書き<br>
+			<input type="file" name="data" accept="image/jpeg,image/jpg,image/png" value ="画像ファイルを選択" id="pic2"><br>
+			<input type="button" value="やっぱやめる" onclick="clearfile2()">
+			</form>
+		  </td><td id="showPictureArea2"></td></tr>
+	
+		  <tr><td id="picture2"></td><td>
+			<form enctype="multipart/form-data" method="post" id="picfile3" target="nodisp"><br>
+			３枚目の画像データを追加・上書き<br>
+			<input type="file" name="data" accept="image/jpeg,image/jpg,image/png" value ="画像ファイルを選択" id="pic3"><br>
+			<input type="button" value="やっぱやめる" onclick="clearfile3()">
+			</form>
+		  </td><td id="showPictureArea3"></td></tr>
+		  </table><br>
+	</td></tr></table>
+
+<p>
+	<input type="submit" value="上記の内容でページを変更" onclick="onClickSubmit_edit_Info();">
+	<input type="button" value="キャンセルして画面を閉じる" onclick="window.close()">
+</p>
+  </body>
+  
+  <script>
+	onload = textpic_setParams3();
+	
+	/*チェックを付けていた行の案内場所*/
+	if(parentData[1] == undefined) {
+	document.getElementById("page").value="";
+	} else {
+	document.getElementById("page").value=parentData[1];
+	}
+	
+	if(parentData[6] == undefined){
+	document.getElementById("page2").value="";
+	} else{
+	document.getElementById("page2").value=parentData[6];
+	}
+  </script>
+  
+	<script type="text/javascript">
+	// １枚目の写真表示切り替え
+	var input_file1 = document.getElementById("pic1");//input要素のid
+	var input_file2 = document.getElementById("pic2");
+	var input_file3 = document.getElementById("pic3");
+	var input_file4 = document.getElementById("text1");
+	var input_file_show1 = document.getElementById("showPictureArea1");//td要素のid
+	var input_file_show2 = document.getElementById("showPictureArea2");
+	var input_file_show3 = document.getElementById("showPictureArea3");
+	var input_file_show4 = document.getElementById("showTextArea1");
+	
+	input_file1.onchange = function (){
+		if(!(input_file1.value)) return;
+		if(!(window.URL)) return;
+		
+		for (i =input_file_show1.childNodes.length-1; i>=0; i--){
+			input_file_show1.removeChild(input_file_show1.childNodes[i]);
+		}
+		
+		var file_list = input_file1.files;
+		if(!file_list) return;
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		var image = new Image();
+		image.width = 250;
+		image.src = blob_url;
+		
+		input_file_show1.appendChild(image);
+	};
+	input_file2.onchange = function (){
+		if(!(input_file2.value)) return;
+		if(!(window.URL)) return;
+
+		for (i =input_file_show2.childNodes.length-1; i>=0; i--){
+			input_file_show2.removeChild(input_file_show2.childNodes[i]);
+		}
+		
+		var file_list = input_file2.files;
+		if(!file_list) return;
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		var image = new Image();
+		image.width = 250;
+		image.src = blob_url;
+		
+		input_file_show2.appendChild(image);
+	};
+	input_file3.onchange = function (){
+		if(!(input_file3.value)) return;
+		if(!(window.URL)) return;
+		
+		for (i =input_file_show3.childNodes.length-1; i>=0; i--){
+			input_file_show3.removeChild(input_file_show3.childNodes[i]);
+		}
+		
+		var file_list = input_file3.files;
+		if(!file_list) return;
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		var image = new Image();
+		image.width = 250;
+		image.src = blob_url;
+		
+		input_file_show3.appendChild(image);
+	};
+	input_file4.onchange = function (){
+		if(!(input_file4.value)) return;
+		if(!(window.URL)) return;
+
+		for (i =input_file_show4.childNodes.length-1; i>=0; i--){
+			input_file_show4.removeChild(input_file_show4.childNodes[i]);
+		}
+
+		var file_list = input_file4.files;
+		if(!file_list) return;
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		var iframe = document.createElement("iframe");
+		iframe.width = 250;
+		iframe.src = blob_url;
+		
+		input_file_show4.appendChild(iframe);
+	};
+	
+	</script>
+</html>

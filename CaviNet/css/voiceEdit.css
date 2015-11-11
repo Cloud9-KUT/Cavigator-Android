@@ -1,0 +1,37 @@
+#list table{
+    table-layout: auto;
+    border-collapse: collapse;
+}
+#TheadArea{
+    background-color: #ffee99;
+    display:block;
+    border: solid 3px;
+}
+#TheadArea td{
+    height: 40px;
+    padding: 5px;
+    border: solid 1px;
+}
+#TbodyArea{
+    display:block;
+    overflow-y:scroll;
+    height:350px;
+    background-color: #eeeeee;
+    border: solid 3px;
+    margin-top:3px
+}
+
+#TbodyArea td{
+    border:1px dashed #222222;
+    border-left:none;
+    border-right:none;	
+    padding: 10px;
+    margin: auto;
+}
+
+tr th:nth-of-type(6) { visibility:hidden; }
+tr td:nth-of-type(6) { visibility:hidden; }
+
+
+#buttonlist tr th{ visibility:visible; }
+#buttonlist tr td{ visibility:visible; }

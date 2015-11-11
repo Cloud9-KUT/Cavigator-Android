@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <title>CaviNet</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+
+    <script type="text/javascript" src="js/formatter.js"></script>
+    <script type="text/javascript" src="js/textCreateTable.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+
+    <body onload="voice_setParams();">  
+	  <h2>ボイスガイドの<u>音声データ</u>または、<u>案内場所</u>を<font color="#FF0000">削除する</font></h2>
+      <hr>
+      
+  <table border=1>
+	<tr><td><p>
+	  <img src="pic/alert.png"  width="20px" height="20px">	
+	  <font size="4"><b>選択している案内場所は</b></font><p>
+	  <input type="text" id="page" name="name" size="45" disabled="disabled">
+	  <font size="4">です</b></font>
+	</td></tr>
+　　 <tr><td>
+	  <h3><u>音声データのみを削除しますか？</u></h3>
+      
+      <input type="button" value="消去する" onclick="voice_kesu();">
+      <input type="button" value="キャンセル" onclick="window.close()">
+	</td></tr>
+	<tr><td>
+	  <h3><font color="red"><u>『案内場所』を本当に削除しますか？</u></font></h3>
+	  <font color="#ff0000">※この場合、案内場所に関する音声データも削除されます。</font><br>
+      <input type="button" value="消去する" onclick="location_kesu();">
+	  <input type="button" value="キャンセル" onclick="window.close()"><br>
+	</td></td>
+  </table>
+</div>
+</div>
+</div>
+</body>
+
+<script>
+  onload = voice_setParams();
+  console.log(parentData[1]);
+
+  /*チェックを付けていた行の案内場所*/
+  if(parentData[1] == undefined) {
+  document.getElementById("page").value="";
+  }else{
+  document.getElementById("page").value=parentData[1];
+  }
+</script>
+
+</html>

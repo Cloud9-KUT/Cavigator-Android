@@ -1,0 +1,79 @@
+.button2 {
+    display: inline-block;
+    width: 280px;
+    height: 70px;
+    margin-top: 13px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    border: 2px solid #32CD32;
+    color: #32CD32;
+    line-height: 60px
+}
+
+.button2:hover {
+    background-color: #7FFF00;
+    border-color: #7FFF00;
+    color: #fff;
+}
+
+.button2::before,
+.button2::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+}
+
+
+.button2:hover {
+    background-color: #7FFF00;
+    border-color: #7FFF00;
+    color: #fff;
+}
+
+.button2::before,
+.button2::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+
+.button2::before {
+    right: 0;
+}
+.button2::after {
+    left: 0;
+}
+.button2:hover::before,
+.button2:hover::after {
+    width: 0;
+    background-color: #32CD32;
+}
+
+.button2::before {
+    right: 0;
+}
+.button2::after {
+    left: 0;
+}
+.button2:hover::before,
+.button2:hover::after {
+    width: 0;
+    background-color: #7FFF00;
+}

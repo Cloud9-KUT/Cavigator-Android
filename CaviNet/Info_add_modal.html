@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+	<meta charset = "utf-8">
+	<script src="js/formatter.js"></script>
+	<script src="js/add.js"></script>
+	<script src="js/modal.js"></script>
+	<title>CaviNet</title>
+	<script>
+	  var FRead = new FileReader();
+	  
+	  function Fapi1() {
+	  var FL =
+	  document.getElementById("textform").files;
+	  FRead.readAsText(FL[0],"utf-8");
+	  }
+	  
+	  FRead.onerror = function (evt) {
+	  aleart("読み込みエラー");
+	  }
+	  
+	  FRead.onload = function(evt) {
+	  document.getElementById("STS").innerHTML = evt.target.result;
+	  }
+	  
+	  var Fread = new FileReader();
+	  
+	  function Fapi2() {
+	  var FL =
+	  document.getElementById("picform").files;
+	  FRead.readAsText(FL[0]);
+	  }
+	  
+	  FRead.onerror = function (evt) {
+	  aleart("読み込みエラー");
+	  }
+	  
+	  FRead.onload = function(evt) {
+	  alert("画像表示");
+	  document.getElementById("STS2").src = evt.target.result;
+	  }
+	</script>
+  </head>
+  
+  <body onload="textpic_setParams2();">
+	<h2>インフォメーションの<u>案内場所</u>を<font color="#FF0000">追加する</font></h2>
+	<hr>
+	<table border=1><tr><td>
+		<!--form1 場所-->
+		<h3><u>追加する情報を入力</u></h3>
+		<font color="#ff0000">※全ての言語に案内場所が生成されます。<br>
+		  テキスト・写真データは、言語ごとに編集する必要があります。<br>
+		  「内容の編集」ボタンで、後で追加することが可能です。
+		</font>
+		<form action="" method="post" id="location" target="nodisp">
+		案内場所の名前<div><input type="text" id="page" name="name" size="30" required></div>
+		
+		</form>
+		<form action="" method="post" id="location2" target="nodisp">
+		  ネイティブの綴り
+		  <div><input type="text" id="page2" name="name" size="30" required></div>
+		</form>
+	 
+	  <!---------------------------->
+  　</td></tr><tr><td>
+	  <!--form2 fileData-->
+		<h3><u>テキストデータを選択</u></h3>
+		<font color="#ff0000">※最大１つのテキストデータを選択することができます。<br>
+		「内容の編集」ボタンで、後で追加することが可能です。</font>
+		<table><tr><td>
+		  <form enctype="multipart/form-data" method="post" id="textfile" target="nodisp" name="form1">
+			テキストデータの追加<br>
+			<input type="file" name="data" id="textform1" accept="text/plain"><br>
+		  </form>
+		</td><td id="showTextArea1">
+		選択されていません
+		</td></tr>
+		</table>
+<div id = "STS"></div>
+　</td></tr><tr><td>
+		<h3><u>画像データを選択</u></h3>
+		<font color="#ff0000">※最大３つの画像データを選択することができます。<br>
+		「内容の編集」ボタンで、後で追加することが可能です。</font>
+		<table><tr><td>
+		  <form enctype="multipart/form-data" method="post" id="picfile1" target="nodisp" name="form2">
+			１枚目の画像データを追加<br>
+			<input type="file" name="data" id="picform1" accept="image/jpeg,image/jpg,image/png"><br><br>
+			<input type="button" value="ファイルの選択をキャンセル" onclick="clearfile1()">
+		  </form>
+		</td><td id="showPictureArea1">
+		  選択されていません
+		</td></tr>
+		<tr><td>
+		  <form enctype="multipart/form-data" method="post" id="picfile2" target="nodisp" name="form2"><br>
+			２枚目の画像データを追加<br>
+			<input type="file" name="data" id="picform2" accept="image/jpeg,image/jpg,image/png"><br><br>
+			<input type="button" value="ファイルの選択をキャンセル" onclick="clearfile2()">
+		  </form>
+		</td><td id="showPictureArea2">
+		選択されていません
+		</td></tr>
+		<tr><td>
+		  <form enctype="multipart/form-data" method="post" id="picfile3" target="nodisp" name="form2"><br>
+			３枚目の画像データを追加<br>
+			<input type="file" name="data" id="picform3" accept="image/jpeg,image/jpg,image/png"><br><br>
+			<input type="button" value="ファイルの選択をキャンセル" onclick="clearfile3()">
+		  </form>
+		</td><td id="showPictureArea3">
+		選択されていません
+		</td></tr>
+		</table>
+<br>
+</td></tr></table>
+<p>
+	<div id ="STS2"> </div>
+	  <input type="submit" value="上記の内容で新たにページを追加する" onclick="onClickSubmit_add_Info();">
+	  <input type="button" value="キャンセルして画面を閉じる" onclick="window.close()">
+	  <iframe name="nodisp" id="naiyo" style="display:none"></iframe>
+  </p>
+  </body>
+	<script type="text/javascript">
+	// １枚目の写真表示切り替え
+	var input_file1 = document.getElementById("picform1");//input要素のid
+	var input_file2 = document.getElementById("picform2");
+	var input_file3 = document.getElementById("picform3");
+	var input_file4 = document.getElementById("textform1");
+	var input_file_show1 = document.getElementById("showPictureArea1");//td要素のid
+	var input_file_show2 = document.getElementById("showPictureArea2");
+	var input_file_show3 = document.getElementById("showPictureArea3");
+	var input_file_show4 = document.getElementById("showTextArea1");
+	
+	input_file1.onchange = function (){
+		// ファイルが選択されたか
+		if(!(input_file1.value)) return;
+		// Blob URL Scheme をサポートしているか
+		if(!(window.URL)) return;
+		
+		/* 初期化処理 */
+		for (i =input_file_show1.childNodes.length-1; i>=0; i--){
+			input_file_show1.removeChild(input_file_show1.childNodes[i]);
+		}
+		
+		// ファイルリストを取得
+		var file_list = input_file1.files;
+		if(!file_list) return;
+		// 0 番目の File オブジェクトを取得
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+				console.log(window.URL.createObjectURL(file));
+
+		// HTMLImageElement オブジェクトを作成する
+		var image = new Image();
+		image.width = 250;
+		image.src = blob_url;
+		
+		// BODY のノードリストに登録
+		input_file_show1.appendChild(image);
+	};
+	input_file2.onchange = function (){
+		// ファイルが選択されたか
+		if(!(input_file2.value)) return;
+		// Blob URL Scheme をサポートしているか
+		if(!(window.URL)) return;
+		
+		/* 初期化処理 */
+		for (i =input_file_show2.childNodes.length-1; i>=0; i--){
+			input_file_show2.removeChild(input_file_show2.childNodes[i]);
+		}
+		
+		// ファイルリストを取得
+		var file_list = input_file2.files;
+		if(!file_list) return;
+		// 0 番目の File オブジェクトを取得
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		// HTMLImageElement オブジェクトを作成する
+		var image = new Image();
+		image.width = 250;
+		image.src = blob_url;
+		
+		// BODY のノードリストに登録
+		input_file_show2.appendChild(image);
+	};
+	input_file3.onchange = function (){
+		// ファイルが選択されたか
+		if(!(input_file3.value)) return;
+		// Blob URL Scheme をサポートしているか
+		if(!(window.URL)) return;
+		
+		/* 初期化処理 */
+		for (i =input_file_show3.childNodes.length-1; i>=0; i--){
+			input_file_show3.removeChild(input_file_show3.childNodes[i]);
+		}
+		
+		// ファイルリストを取得
+		var file_list = input_file3.files;
+		if(!file_list) return;
+		// 0 番目の File オブジェクトを取得
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		// HTMLImageElement オブジェクトを作成する
+		var image = new Image();
+		image.width = 250;
+		image.src = blob_url;
+		
+		// BODY のノードリストに登録
+		input_file_show3.appendChild(image);
+	};
+	input_file4.onchange = function (){
+		// ファイルが選択されたか
+		if(!(input_file4.value)) return;
+		// Blob URL Scheme をサポートしているか
+		if(!(window.URL)) return;
+		
+		/* 初期化処理 */
+		for (i =input_file_show4.childNodes.length-1; i>=0; i--){
+			input_file_show4.removeChild(input_file_show4.childNodes[i]);
+		}
+		
+		// ファイルリストを取得
+		var file_list = input_file4.files;
+		if(!file_list) return;
+		// 0 番目の File オブジェクトを取得
+		var file = file_list[0];
+		if(!file) return;
+		
+		var blob_url = window.URL.createObjectURL(file);
+		
+		// HTMLImageElement オブジェクトを作成する
+		var iframe = document.createElement("iframe");
+		iframe.width = 250;
+		iframe.src = blob_url;
+		
+		// BODY のノードリストに登録
+		input_file_show4.appendChild(iframe);
+	};
+	
+	
+	//-->
+	</script>
+
+</html>

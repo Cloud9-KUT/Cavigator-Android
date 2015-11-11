@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <script src="js/formatter.js"></script>
+    <script src="js/edit.js"></script>
+    <script src="js/modal.js"></script>
+    
+    <title>CaviNet</title>
+    
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+  </head>
+
+  <body onload="voice_setParams();">
+	<h2>ボイスガイドの<u>案内場所</u>を<font color="#FF0000">変更する</font></h2>
+    <hr>
+    <table border=1><tr><td><p>
+      <h3><u>変更する情報を入力	</u></h3>
+      <form method="post" id="location" target="nodisp">
+	案内場所の名前<br>
+	<div><input type="text" id="page" name="name" size="30"></div>
+      </form>
+	  
+	  <form method="post" id="location2" target="nodisp">
+		ネイティブの綴り<br>
+		<div><input type="text" id="page2" name="name" size="30"></div>
+		</form>
+</p></td></tr>
+<!---------------------------->
+
+<!--form2 fileData-->
+<tr><td><p>
+	<h3><u>変更する音声データの</u></h3>
+      <form enctype="multipart/form-data" method="post" id="file" target="nodisp"> 
+	<font color="#ff0000">※音声データは一つのみ登録可能です。<br>
+	  音声データを選択して送信した場合、既に登録してある音声データは上書きされます。</font><br>		
+	音声データの追加・上書き<br>
+	<input type="file" name="data">
+</p></td></tr></table>
+<p>
+<input type="submit" value="上記の内容でページを変更" onclick="onClickSubmit_edit_Voice();">
+<input type="button" value="キャンセルして画面を閉じる" onclick="window.close()">
+</p>
+</form>
+<iframe name="nodisp" id="naiyo" style="display:none"></iframe>
+
+</body>
+
+  <script>
+	onload = voice_setParams();
+	
+	/*チェックを付けていた行の案内場所*/
+	if(parentData[1] == undefined) {
+	document.getElementById("page").value="";
+	} else {
+	document.getElementById("page").value=parentData[1];
+	}
+	
+	if(parentData[3] == undefined){
+	document.getElementById("page2").value="";
+	} else{
+	document.getElementById("page2").value=parentData[3];
+	}
+  </script>
+</html>

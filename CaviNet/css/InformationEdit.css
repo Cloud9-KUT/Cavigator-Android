@@ -1,0 +1,3 @@
+
+tr th:nth-of-type(8) { visibility:hidden; }
+tr td:nth-of-type(8) { visibility:hidden; }

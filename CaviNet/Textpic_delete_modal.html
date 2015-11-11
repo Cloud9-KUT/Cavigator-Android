@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <title>CaviNet</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+
+    <script type="text/javascript" src="js/formatter.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/InformationEdit.js"></script>
+    
+    <body onload="textpic_setParams();">  
+
+      
+      <table border=1>
+	<tr><td>
+	    <div>
+	      <img src="./pic/lang.png" width="30" height="30"/>
+	      <font size="3" color="red"><b><u>『テキスト(文章)』を削除しますか？</u></b></font>
+	      <p>    
+		<input type="button" value="消去する" onclick="text_kesu();">
+		<input type="button" value="キャンセル" onclick="window.close()">    
+	      <p>
+	    </div> 
+	</td></tr>
+
+	<tr><td>
+
+	    <div id = "picture">
+	      <img src="./pic/lang.png" width="30" height="30"/>
+	      <font size="3" color="red"><b><u>『写真』を削除しますか？</u></b></font>
+	      <p>    
+		<input type="button" value="消去する" onclick="picture_kesu();">
+		<input type="button" value="キャンセル" onclick="window.close()">    
+	      <p>
+	    </div>
+	</td></tr>
+	
+	<tr><td>
+	    <div>
+	      <img src="./pic/lang.png" width="30" height="30"/>
+	      <font size="3" color="red"><b><u>本当に『案内場所』を削除してもよろしいですか？？？</u></b></font><p>
+		<font size="2">＊この場合、案内場所に関する『テキスト(文章)』と『写真』も削除されます。</font>
+	      <p>    
+		<input type="button" value="消去する" onclick="page_kesu();">
+		<input type="button" value="キャンセル" onclick="window.close()">    
+	      <p>
+	    </div>
+	</td></tr>
+
+      </table>
+
+</div>
+</div>
+</div>
+</body>
+
+</html>

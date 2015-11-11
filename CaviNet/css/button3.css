@@ -1,0 +1,79 @@
+.button3 {
+    display: inline-block;
+    width: 280px;
+    height: 70px;
+    margin-top: 13px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    border: 2px solid #FF7F50;
+    color: #FF7F50;
+    line-height: 60px;
+}
+
+.button3:hover {
+    background-color: #FF6347;
+    border-color: #FF6347;
+    color: #fff;
+}
+
+.button3::before,
+.button3::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+}
+
+
+.button3:hover {
+    background-color: #FF6347;
+    border-color: #FF6347;
+    color: #fff;
+}
+
+.button3::before,
+.button3::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    content: '';
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+}
+
+
+
+.button3::before {
+    right: 0;
+}
+.button3::after {
+    left: 0;
+}
+.button3:hover::before,
+.button3:hover::after {
+    width: 0;
+    background-color: #FF7F50;
+}
+
+.button3::before {
+    right: 0;
+}
+.button3::after {
+    left: 0;
+}
+.button3:hover::before,
+.button3:hover::after {
+    width: 0;
+    background-color: #FF6347;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <title>CaviNet インフォメーションの編集</title>
+    <link rel ="stylesheet" href="css/mycss.css">
+    <link rel ="stylesheet" href="css/button.css">
+    <link rel ="stylesheet" href="css/button1.css">
+    <link rel ="stylesheet" href="css/button2.css">
+    <link rel ="stylesheet" href="css/button3.css">
+    <link rel ="stylesheet" href="css/button4.css">
+    <link rel ="stylesheet" href="css/InformationEdit.css">
+
+    
+    <script type="text/javascript" src="js/formatter.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/preview.js"></script>
+    <script type="text/javascript" src="js/InformationSwap.js"></script>
+    <script type="text/javascript" src="js/InformationEdit.js"></script>
+
+  </head>
+
+  <body  link="blue" vlink="blue">
+    <div id="container">
+      <!-- ヘッダ -->
+      <div class = "header"><!-- ヘッダー開始 -->
+	<a href="TopPage.html" >
+	  <div id = "headTitle">
+	    <div class="threed">CaviNet</div>
+	  </div>
+	</a>
+	<div id = "locate"><h1><u>▶︎テキストガイド</u></h1></div>
+	<div id = "pic"><img src = "pic/cavinet_logo.png" width="150px"></div>
+      </div><!-- ヘッダー終了 -->
+      
+      <div id = "side"><!-- サイドバー開始 -->
+	<table id="sidebar"><tr><td id="toplink">
+	<div id="listbutton">
+		<a class="button1" href="TopPage.html" 
+		onmouseover="this.innerText='トップページに戻ります'" 
+		onmouseout="this.innerText='トップページ'">トップページ</a>
+	</div>
+	</td></tr>
+	<tr><td width=280>
+		<table id="likeGater"><tr><td width=280 height=90></td></tr><tr><td>
+			<a href="VoiceEdit.html"><img src="pic/side/side_voice.png" onmouseover="this.src='pic/side/side_voice_over.png'" onmouseout="this.src='pic/side/side_voice.png'"></a>
+		</td></tr><tr><td>
+			<a href="TextEdit.html"><img src="pic/side/side_info.png" onmouseover="this.src='pic/side/side_info_over.png'" onmouseout="this.src='pic/side/side_info.png'"></a><br>
+		</td></tr><tr><td>
+			<a href="LanguageEdit.html"><img src="pic/side/side_lang.png" onmouseover="this.src='pic/side/side_lang_over.png'" onmouseout="this.src='pic/side/side_lang.png'"></a>
+			<a href="Help2.html" target="_blank"><img src="pic/side/side_help.png" onmouseover="this.src='pic/side/side_help_over.png'" onmouseout="this.src='pic/side/side_help.png'" hspace=6></a>
+		</td></tr><tr><td height=60>
+		</td></tr></table>
+	</td></tr>
+	</table>
+
+
+      </div><!-- サイドバー終了 -->
+
+
+      <div id="contents"><!-- コンテンツ開始 -->
+	<!-- 文章編集のコンテンツを追加 -->
+	<table id="buttonlist"><tr><td>
+	      <form name = "langSelect" enctype="multipart/form-data" method="post" id="textForm" target="nodisp">
+		<select id="LanguageID" class="LanguageID" name="LanguageID" onchange=changeSelect()></select>
+	      </form>
+
+	      <input type="button" onclick="clearCheckbox()" value="チェックを外す">
+
+	      <div class="">
+	    </td><td>
+	      <img src = "pic/button/edit.png" width="130px" height="40" onclick="info_edit_showModal();" onmouseover="this.src='pic/button_over/info_edit.png'" onmouseout="this.src='pic/button/edit.png'">
+	    </td><td>
+	      <img src = "pic/button/info_add.png" width="150px" height="40" onclick="info_add_showModal();" onmouseover="this.src='pic/button_over/info_add.png'" onmouseout="this.src='pic/button/Info_add.png'">
+	    </td><td>
+	      <img src = "pic/button/info_delete.png" width="200px" height="40" onclick="textpic_showModal();" onmouseover="this.src='pic/button_over/info_delete.png'" onmouseout="this.src='pic/button/Info_delete.png'">
+	    </td><td>
+	      <img src = "pic/button/swap1.png" width="120px" height="40" onclick="swap_up();" onmouseover="this.src='pic/button_over/swap1.png'" onmouseout="this.src='pic/button/swap1.png'">
+	    </td><td>
+	      <img src = "pic/button/swap2.png" width="120px" height="40" onclick="swap_down();" onmouseover="this.src='pic/button_over/swap2.png'" onmouseout="this.src='pic/button/swap2.png'">
+	</td></tr></table>
+	</div>
+
+	<div id = "alert"></div>
+
+	<hr>
+
+	<table id = "list">
+	  <thead id = "TheadArea"></thead>
+	  <tbody id = "TbodyArea"></tbody>
+
+	</table>
+
+      </div><!-- コンテンツ終了 -->
+    </div>
+  </body>
+</html>

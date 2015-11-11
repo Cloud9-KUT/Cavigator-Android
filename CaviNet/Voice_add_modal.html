@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "ja">
+  <head>
+    <meta charset = "utf-8">
+    <script src="js/formatter.js"></script>
+    <script src="js/add.js"></script>
+    <script src="js/modal.js"></script>
+
+    <!--<script src="js/modal.js"></script>-->
+    <script src="languageCreateTable.js"></script>
+    <title>CaviNet</title>
+    
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
+  </head>
+
+  <body onload="voice_setParams();">
+	<h2>ボイスガイドの<u>案内場所</u>を<font color="#ff0000">追加する</font></h2>
+    <hr>
+    <!--form1 場所-->
+    <table border=1><tr><td><p>
+		<h3><u>追加する情報を入力</u></h3>
+		<font color="#ff0000">
+	      ※全ての言語に案内場所が生成されます。<br>
+		  他の言語への音声データの追加は、「内容の編集」ボタンで追加することが可能です。</font> 
+		<form method="post" id="location" target="nodisp">
+		  案内場所の名前<br>
+<input type="text" id="page" name="name" size="30">
+	    </form>
+		
+		<form action="" method="post" id="location2" target="nodisp">
+		  ネイティブの綴り
+		  <div><input type="text" id="page2" name="name" size="30" required></div>
+		</form>
+
+	    <!---------------------------->
+      </p></td></tr><tr><td><p>
+	    <!--form2 fileData-->
+		<h3><u>音声ファイルの選択</u></h3>
+		<font color="#ff0000">
+		  ※「内容の編集」ボタンで、後で追加することが可能です。</font>
+
+		<form enctype="multipart/form-data" method="post" id="file" target="nodisp">
+		音声データを追加<br>
+	      <input type="file" name="data"><br>
+	    </form>
+	    <iframe name="nodisp" id="naiyo" style="display:none"></iframe>
+    </p></td></tr></table>
+    <p>
+      <input type="submit" value="上記の内容で音声ファイルを追加" onclick="onClickSubmit_add_Voice();">
+      <input type="button" value="キャンセルして画面を閉じる" onclick="window.close()">
+    </p>
+  </body>
+</html>
